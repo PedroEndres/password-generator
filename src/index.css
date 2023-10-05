@@ -109,8 +109,13 @@ button {
 
 @media (max-width: 768px) {
   .App {
-    height: 80vh !important;
-    width: 100vw !important;
+    width: 270px !important;
     padding: 25px !important;
+  }
+}
+
+@media (max-width: 340px) {
+  .App {
+    width: 220px !important;
   }
 }
