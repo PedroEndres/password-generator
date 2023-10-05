@@ -103,7 +103,9 @@ function App() {
           <span id="security" className={securityClass}>
             Seguridad: {securityLevel}
           </span>
-          <button onClick={copyToClipboard}>Copiar al Portapapeles</button>
+          <button className="button-copy" onClick={copyToClipboard}>
+            Copiar al Portapapeles
+          </button>
         </div>
       )}
       <div className="input-range">

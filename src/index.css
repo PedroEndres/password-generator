@@ -16,13 +16,14 @@ body {
   background-color: #e8e8e8;
   margin: 0 auto;
   padding: 20px;
-  max-width: 400px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 14px;
   justify-content: center;
+  width: 600px;
+  height: 650px;
 }
 
 h1 {
@@ -70,6 +71,10 @@ button {
   gap: 20px;
 }
 
+.button-copy {
+  margin: auto;
+}
+
 #security {
   color: white;
   text-shadow: 1px 1px 3px black;
@@ -100,4 +105,12 @@ button {
 
 .very-secure {
   background-color: #63b397;
+}
+
+@media (max-width: 768px) {
+  .App {
+    height: 80vh !important;
+    width: 100vw !important;
+    padding: 25px !important;
+  }
 }
