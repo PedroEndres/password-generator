@@ -1,0 +1,103 @@
+#root {
+  margin: auto;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  height: 100vh;
+  display: flex;
+}
+
+.App {
+  background-color: #e8e8e8;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+}
+
+h1 {
+  color: #63b397;
+}
+
+h2 {
+  color: #63b397;
+  margin: 0;
+}
+
+input {
+  flex-grow: 1;
+  padding: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  accent-color: #63b397;
+}
+
+p {
+  margin: 0;
+  overflow: hidden;
+}
+
+button {
+  background-color: #333333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.input-range {
+  display: flex;
+  flex-direction: column;
+}
+
+.password-generate {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#security {
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  padding: 5px;
+  border-radius: 5px;
+  margin: auto;
+}
+
+#generate-password {
+  overflow: hidden;
+}
+
+.insecure {
+  background-color: #990100;
+}
+
+.poor {
+  background-color: #dd644f;
+}
+
+.good {
+  background-color: #fcc25e;
+}
+
+.secure {
+  background-color: #9aedc3;
+}
+
+.very-secure {
+  background-color: #63b397;
+}
