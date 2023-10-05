@@ -110,7 +110,7 @@ button {
 @media (max-width: 768px) {
   .App {
     width: 270px !important;
-    height: 570px !important;
+    height: 550px !important;
     padding: 25px !important;
   }
 }
