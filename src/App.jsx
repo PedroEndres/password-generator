@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Button from "./components/Button";
+import ItemWithCheckbox from "./components/ItemWithCheckbox";
 
 function App() {
   const [password, setPassword] = useState("");
@@ -8,7 +10,28 @@ function App() {
   const [includeLowercase, setIncludeLowercase] = useState(true);
   const [includeNumbers, setIncludeNumbers] = useState(true);
   const [includeSpecialChars, setIncludeSpecialChars] = useState(false);
-
+  const CHECKS = [
+    {
+      text: "Mayúsculas:",
+      checked: includeUppercase,
+      onChange: () => setIncludeUppercase(!includeUppercase),
+    },
+    {
+      text: "Minúsculas:",
+      checked: includeLowercase,
+      onChange: () => setIncludeLowercase(!includeLowercase),
+    },
+    {
+      text: "Números:",
+      checked: includeNumbers,
+      onChange: () => setIncludeNumbers(!includeNumbers),
+    },
+    {
+      text: "Caracteres Especiales:",
+      checked: includeSpecialChars,
+      onChange: () => setIncludeSpecialChars(!includeSpecialChars),
+    },
+  ];
   useEffect(() => {
     generatePassword();
   }, [
@@ -103,9 +126,9 @@ function App() {
           <span id="security" className={securityClass}>
             Seguridad: {securityLevel}
           </span>
-          <button className="button-copy" onClick={copyToClipboard}>
+          <Button className="button-copy" onClick={copyToClipboard}>
             Copiar al Portapapeles
-          </button>
+          </Button>
         </div>
       )}
       <div className="input-range">
@@ -119,38 +142,9 @@ function App() {
         />
         <span>{length}</span>
       </div>
-      <div>
-        <label>Mayúsculas:</label>
-        <input
-          type="checkbox"
-          checked={includeUppercase}
-          onChange={() => setIncludeUppercase(!includeUppercase)}
-        />
-      </div>
-      <div>
-        <label>Minúsculas:</label>
-        <input
-          type="checkbox"
-          checked={includeLowercase}
-          onChange={() => setIncludeLowercase(!includeLowercase)}
-        />
-      </div>
-      <div>
-        <label>Números:</label>
-        <input
-          type="checkbox"
-          checked={includeNumbers}
-          onChange={() => setIncludeNumbers(!includeNumbers)}
-        />
-      </div>
-      <div>
-        <label>Caracteres Especiales:</label>
-        <input
-          type="checkbox"
-          checked={includeSpecialChars}
-          onChange={() => setIncludeSpecialChars(!includeSpecialChars)}
-        />
-      </div>
+      {CHECKS.map((el, i) => (
+        <ItemWithCheckbox key={i} {...el} />
+      ))}
     </div>
   );
 }
