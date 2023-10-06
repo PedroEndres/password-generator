@@ -50,8 +50,18 @@ p {
   overflow: hidden;
 }
 
-button {
+.password-container{
   background-color: #333333;
+  padding: 7px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.02px;
+  margin: 0 70px;
+}
+
+button {
+  background-color: #63b397;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -64,6 +74,10 @@ button {
   flex-direction: column;
 }
 
+.input-range-style {
+  margin: 0 100px;
+}
+
 .password-generate {
   margin-bottom: 20px;
   display: flex;
@@ -71,8 +85,15 @@ button {
   gap: 20px;
 }
 
-.button-copy {
-  margin: auto;
+img {
+  width: 18px;
+  height: 18px;
+}
+
+.iconos-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
 
 #security {
@@ -107,11 +128,24 @@ button {
   background-color: #63b397;
 }
 
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
 @media (max-width: 768px) {
   .App {
     width: 270px !important;
     height: 570px !important;
     padding: 25px !important;
+  }
+  .input-range-style {
+    margin: 0 35px !important;
+  }
+  .password-container{
+    margin: 0 15px !important;
   }
 }
 

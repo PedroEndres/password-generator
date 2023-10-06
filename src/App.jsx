@@ -122,29 +122,37 @@ function App() {
       {password && (
         <div className="password-generate">
           <h2>Contraseña Generada:</h2>
-          <p>{password}</p>
+          <p className="password-container">{password}</p>
           <span id="security" className={securityClass}>
             Seguridad: {securityLevel}
           </span>
-          <Button className="button-copy" onClick={copyToClipboard}>
-            Copiar al Portapapeles
+          <div className="iconos-container">
+          <Button className="button-style" onClick={copyToClipboard}>
+            <img src="./copia.png" alt="Icono de copiar a portapapeles" />
           </Button>
+          <Button onClick={generatePassword}>
+            <img src="./actualizar.png" alt="Icono de generar nueva contraseña" />
+            </Button>
+          </div>       
         </div>
       )}
       <div className="input-range">
-        <label>Longitud de la Contraseña:</label>
-        <input
+        <label className="input-range">Longitud de la Contraseña: {length}
+        <input className="input-range-style"
           type="range"
           min="1"
           max="100"
           value={length}
           onChange={(e) => setLength(e.target.value)}
         />
-        <span>{length}</span>
+        </label>
+        
       </div>
+      <form className="form-container">
       {CHECKS.map((el, i) => (
         <ItemWithCheckbox key={i} {...el} />
       ))}
+      </form>
     </div>
   );
 }
